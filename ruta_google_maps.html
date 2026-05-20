@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruta en Google Maps · 9 Etapas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Libre+Baskerville:ital@0;1&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f0e0b;
+    --surface: #1a1915;
+    --border: #2e2c25;
+    --text: #e8e4d8;
+    --muted: #8a8470;
+    --accent: #c8a96e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Libre Baskerville', serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 30px 20px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+  header p {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-top: 6px;
+  }
+  .total-badge {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 5px 14px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent);
+  }
+  .grid {
+    max-width: 860px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 14px;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  }
+  .card-top {
+    height: 5px;
+  }
+  .card-body {
+    padding: 14px 16px;
+  }
+  .card-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--text);
+    margin: 5px 0 10px;
+    line-height: 1.3;
+  }
+  .card-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .meta-item .lbl {
+    font-size: 0.6rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .meta-item .val {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.88rem;
+    color: var(--accent);
+    margin-top: 1px;
+  }
+  .gmaps-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 9px 0;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.78rem;
+    text-decoration: none;
+    transition: all 0.15s;
+    cursor: pointer;
+  }
+  .gmaps-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(200,169,110,0.07);
+  }
+  .gmaps-icon {
+    width: 16px;
+    height: 16px;
+  }
+  .note {
+    max-width: 860px;
+    margin: 28px auto 0;
+    padding: 12px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 0.73rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .note strong { color: var(--text); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ruta Circular · 9 Etapas</h1>
+  <p>Tortosa · Terres de l'Ebre · Aragón · Maestrat</p>
+  <div class="total-badge">919.3 km totales</div>
+</header>
+
+<div class="grid">
+
+  <div class="card">
+    <div class="card-top" style="background:#E63946"></div>
+    <div class="card-body">
+      <div class="card-num">Etapa 1 de 9</div>
+      <div class="card-name">Tortosa<br>→ Aiguaviva de Bergantes</div>
+      <div class="card-meta">
+        <div class="meta-item">
+          <div class="lbl">Distancia</div>
+          <div class="val">114.0 km</div>
+        </div>
+        <div class="meta-item">
+          <div class="lbl">Inicio</div>
+          <div class="val">40.8201, 0.5237</div>
+        </div>
+      </div>
+      <div style="color: #FFC107; font-size: 0.88rem; margin-bottom:10px">⚠️Desvio en La Portellada</div>
+      <a class="gmaps-btn" href="https://www.google.com/maps/dir/40.820139,0.523705/41.0052842,0.3656018/40.981438,0.281321/40.87969,0.011257/40.824779,-0.20035/@40.8063274,0.5119446,2445m/data=!3m1!1e3!4m32!4m31!1m5!3m4!1m2!1d0.5187756!2d40.8097483!3s0x12a0e4a460c77273:0xa7a7706e89f9aa83!1m0!1m15!3m4!1m2!1d0.0558308!2d40.8829987!3s0x12a09e98ac90c3bf:0xd5111ee660a7fff6!3m4!1m2!1d0.0547814!2d40.8824633!3s0x12a09e9f364dc61f:0xc12c8912a0fd4769!3m4!1m2!1d0.0435882!2d40.8824741!3s0x12a09e81407c899f:0x117d6be07f74b4a6!1m5!3m4!1m2!1d-0.007549!2d40.8883233!3s0xd5f61e4dce287ff:0xb9193f9799586d0c!1m0!3e0?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+        <svg class="gmaps-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+        </svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top" style="background:#F4A261"></div>
+    <div class="card-body">
+      <div class="card-num">Etapa 2 de 9</div>
+      <div class="card-name">Aiguaviva de Bergantes<br>→ Virgen de la Vega</div>
+      <div class="card-meta">
+        <div class="meta-item">
+          <div class="lbl">Distancia</div>
+          <div class="val">123.8 km</div>
+        </div>
+        <div class="meta-item">
+          <div class="lbl">Inicio</div>
+          <div class="val">40.8248, -0.2013</div>
+        </div>
+      </div>
+      <a class="gmaps-btn" href="https://www.google.com/maps/dir/40.824804,-0.201339/40.640423,-0.244045/40.5296,-0.487032/40.438422,-0.629873/40.360121,-0.70109/@40.3662408,-0.7120722,3583m/data=!3m1!1e3!4m12!4m11!1m0!1m0!1m5!3m4!1m2!1d-0.5253817!2d40.5050318!3s0xd5fae78ead83e79:0x968e9c036749618!1m0!1m0!3e0?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+        <svg class="gmaps-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+        </svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top" style="background:#2A9D8F"></div>
+    <div class="card-body">
+      <div class="card-num">Etapa 3 de 9</div>
+      <div class="card-name">Virgen de la Vega<br>→ Frías de Albarracín</div>
+      <div class="card-meta">
+        <div class="meta-item">
+          <div class="lbl">Distancia</div>
+          <div class="val">140.1 km</div>
+        </div>
+        <div class="meta-item">
+          <div class="lbl">Inicio</div>
+          <div class="val">40.3585, -0.7005</div>
+        </div>
+      </div>
+      <a class="gmaps-btn" href="https://www.google.com/maps/dir/40.358498,-0.700481/40.2092516,-0.9748508/40.226218,-1.168452/40.176982,-1.390808/40.336209,-1.613118/@40.3137383,-1.626216,10745m/data=!3m1!1e3!4m12!4m11!1m0!1m5!3m4!1m2!1d-1.0457445!2d40.1508939!3s0xd5e1011f18e2b51:0x4c86f7c3ca1b56ab!1m0!1m0!1m0!3e0?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+        <svg class="gmaps-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+        </svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top" style="background:#E9C46A"></div>
+    <div class="card-body">
+      <div class="card-num">Etapa 4 de 9</div>
+      <div class="card-name">Frías de Albarracín<br>→ Cañada del Hoyo</div>
+      <div class="card-meta">
+        <div class="meta-item">
+          <div class="lbl">Distancia</div>
+          <div class="val">86.7 km</div>
+        </div>
+        <div class="meta-item">
+          <div class="lbl">Inicio</div>
+          <div class="val">40.3367, -1.6134</div>
+        </div>
+      </div>
+      <a class="gmaps-btn" href="https://www.google.com/maps/dir/40.336662,-1.613424/40.291575,-1.796637/40.209776,-1.677486/40.097504,-1.727959/39.971369,-1.896193/" target="_blank" rel="noopener">
+        <svg class="gmaps-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+        </svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top" style="background:#264653"></div>
+    <div class="card-body">
+      <div class="card-num">Etapa 5 de 9</div>
+      <div class="card-name">Cañada del Hoyo<br>→ La Torre</div>
+      <div class="card-meta">
+        <div class="meta-item">
+          <div class="lbl">Distancia</div>
+          <div class="val">94.7 km</div>
+        </div>
+        <div class="meta-item">
+          <div class="lbl">Inicio</div>
+          <div class="val">39.9737, -1.8930</div>
+        </div>
+      </div>
+      <a class="gmaps-btn" href="https://www.google.com/maps/dir/39.973736,-1.893/39.808799,-1.791423/39.742384,-1.530014/39.703803,-1.431833/39.669302,-1.263664/@39.6649631,-1.3269804,10848m/data=!3m1!1e3!4m12!4m11!1m0!1m0!1m0!1m5!3m4!1m2!1d-1.343693!2d39.6690034!3s0xd674841981e409d:0x60c046eaf4b7d310!1m0!3e0?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+        <svg class="gmaps-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+        </svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top" style="background:#A8DADC"></div>
+    <div class="card-body">
+      <div class="card-num">Etapa 6 de 9</div>
+      <div class="card-name">La Torre<br>→ Manzanera</div>
+      <div class="card-meta">
+        <div class="meta-item">
+          <div class="lbl">Distancia</div>
+          <div class="val">114.1 km</div>
+        </div>
+        <div class="meta-item">
+          <div class="lbl">Inicio</div>
+          <div class="val">39.6691, -1.2632</div>
+        </div>
+      </div>
+      <a class="gmaps-btn" href="https://www.google.com/maps/dir/39.669084,-1.263170/39.729407,-1.104135/39.761923,-0.992555/39.951207,-1.028484/40.057499,-0.831577/" target="_blank" rel="noopener">
+        <svg class="gmaps-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+        </svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top" style="background:#457B9D"></div>
+    <div class="card-body">
+      <div class="card-num">Etapa 7 de 9</div>
+      <div class="card-name">Manzanera<br>→ Puertomingalvo</div>
+      <div class="card-meta">
+        <div class="meta-item">
+          <div class="lbl">Distancia</div>
+          <div class="val">93.9 km</div>
+        </div>
+        <div class="meta-item">
+          <div class="lbl">Inicio</div>
+          <div class="val">40.0601, -0.8284</div>
+        </div>
+      </div>
+      <a class="gmaps-btn" href="https://www.google.com/maps/dir/40.060084,-0.828445/40.068945,-0.607835/40.074396,-0.514095/40.168225,-0.468393/40.262443,-0.4645/@40.2517124,-0.4702104,6582m/data=!3m1!1e3!4m22!4m21!1m10!3m4!1m2!1d-0.738174!2d40.1092646!3s0xd5e2f9971351cf1:0x9742b1d58b4d2e2c!3m4!1m2!1d-0.6962849!2d40.0150781!3s0xd5e29a1fda9a4c3:0x1043dbc151624427!1m0!1m5!3m4!1m2!1d-0.4824582!2d40.1147042!3s0xd5fd04d957d0107:0xb7a0e2776111941d!1m0!1m0!3e0?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+        <svg class="gmaps-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+        </svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top" style="background:#1D3557"></div>
+    <div class="card-body">
+      <div class="card-num">Etapa 8 de 9</div>
+      <div class="card-name">Puertomingalvo<br>→ Vallibona</div>
+      <div class="card-meta">
+        <div class="meta-item">
+          <div class="lbl">Distancia</div>
+          <div class="val">86.2 km</div>
+        </div>
+        <div class="meta-item">
+          <div class="lbl">Inicio</div>
+          <div class="val">40.2648, -0.4624</div>
+        </div>
+      </div>
+      <a class="gmaps-btn" href="https://www.google.com/maps/d/u/0/edit?hl=es&mid=17cg-5sB1wMxXHcfxijDPGO0aOuCuFGs&ll=40.59097180454128%2C0.028746481004273683&z=14" target="_blank" rel="noopener">
+        <svg class="gmaps-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+        </svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top" style="background:#F77F00"></div>
+    <div class="card-body">
+      <div class="card-num">Etapa 9 de 9</div>
+      <div class="card-name">Vallibona<br>→ Tortosa</div>
+      <div class="card-meta">
+        <div class="meta-item">
+          <div class="lbl">Distancia</div>
+          <div class="val">65.7 km</div>
+        </div>
+        <div class="meta-item">
+          <div class="lbl">Inicio</div>
+          <div class="val">40.6034, 0.0462</div>
+        </div>
+      </div>
+      <a class="gmaps-btn" href="https://www.google.com/maps/dir/40.603431,0.046162/40.609378,0.146797/40.617154,0.219071/40.695881,0.476016/40.820205,0.524133/@40.8020033,0.5136687,1941m/data=!3m1!1e3!4m12!4m11!1m0!1m0!1m0!1m5!3m4!1m2!1d0.5201871!2d40.8053265!3s0x12a0e4af5d5f796f:0xa793d5dd1f2878de!1m0!3e0?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">
+        <svg class="gmaps-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+        </svg>
+        Abrir en Google Maps
+      </a>
+    </div>
+  </div>
+</div>
+<div class="note">
+  <strong>Nota:</strong> Cada enlace abre la etapa en Google Maps con puntos de inicio, fin y paradas intermedias extraídas del GPX original.
+  Google Maps calculará la ruta navegable más cercana a cada traza.
+  Para navegación GPS exacta del track, importa los archivos .gpx en <strong>Komoot, Wikiloc o Garmin Connect</strong>.
+</div>
+</body>
+</html>
